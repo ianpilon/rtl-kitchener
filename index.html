@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Refrigerated Transport Service – Kitchener</title>
+<style>
+  /* ---------- Reset & base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.45;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+
+  :root {
+    --primary: #143a73;        /* dark blue */
+    --primary-dark: #0a2447;   /* deeper navy */
+    --primary-light: #2563eb;  /* accent blue */
+    --dark: #1f2937;
+    --darker: #0f172a;
+    --black: #000;
+    --gray-bg: #2a3142;
+    --accent: #f4b400;         /* gold accent for stars */
+    --cta: #f59e0b;            /* amber CTA — pops on navy */
+  }
+
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- Top thin bar ---------- */
+  .topbar {
+    background: var(--primary);
+    height: 6px;
+  }
+  .utility-bar {
+    background: #fff;
+    text-align: right;
+    font-size: 12px;
+    padding: 2px 20px;
+    color: #555;
+  }
+
+  /* ---------- Welcome / address bar ---------- */
+  .welcome-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .welcome-bar .welcome-title {
+    flex: 1;
+    text-align: center;
+  }
+  .welcome-bar h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: var(--primary-dark);
+  }
+  .welcome-bar .address { font-size: 14px; color: #333; }
+  .reviews { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .reviews .rating { font-size: 22px; font-weight: bold; color: var(--primary-dark); }
+  .stars { color: var(--accent); letter-spacing: 1px; font-size: 14px; }
+
+  /* ---------- Main navigation ---------- */
+  .main-nav {
+    background: var(--primary-dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .main-nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .main-nav .logo img { height: 40px; }
+  .canadian-badge {
+    background: #fff;
+    color: var(--primary);
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    flex: 1;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .nav-links a:hover { color: var(--cta); }
+  .phone-btn {
+    background: var(--cta);
+    color: #000;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phone-btn::before {
+    content: "📞";
+    background: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    background: var(--primary-dark);
+    overflow: hidden;
+  }
+  .hero img.hero-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-cards {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    gap: 12px;
+  }
+  .hero-card {
+    background: rgba(245, 245, 245, 0.95);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 150px;
+    border-radius: 2px;
+  }
+  .hero-card .label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .hero-card .btn {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #ddd;
+    color: #222;
+    font-size: 13px;
+    border-radius: 2px;
+  }
+  .hero-card.primary .btn {
+    background: var(--primary);
+    color: #fff;
+  }
+  .hero-expert {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    text-align: center;
+    color: #fff;
+  }
+  .hero-expert img {
+    height: 280px;
+    width: auto;
+  }
+  .hero-expert .name {
+    background: rgba(0,0,0,0.5);
+    padding: 6px 14px;
+    font-size: 13px;
+    margin-top: -40px;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* ---------- Promo strip (3 boxes) ---------- */
+  .promo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .promo-strip > div {
+    aspect-ratio: 4 / 1.4;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+  }
+  .promo-1 { background: linear-gradient(135deg, #1d4ed8 0%, #0a2447 100%); }
+  .promo-2 { background: linear-gradient(135deg, #143a73 0%, #0a2447 100%); }
+  .promo-3 { background: linear-gradient(135deg, #1f2937 0%, #0f172a 100%); }
+  .promo-strip h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .promo-strip .click-here {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+  }
+  .promo-strip .promo-3 .small {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .promo-strip .promo-3 .cta {
+    background: var(--cta);
+    color: #000;
+    padding: 6px 12px;
+    font-size: 11px;
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  /* ---------- Fleet banner ---------- */
+  .fleet-banner {
+    position: relative;
+    background: linear-gradient(90deg, #0a2447 0%, #143a73 100%);
+    color: #fff;
+    text-align: right;
+    padding: 40px 80px 40px 0;
+    overflow: hidden;
+  }
+  .fleet-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('assets/fleet-bg.jpg') left center / 50% 100% no-repeat;
+    opacity: 0.85;
+  }
+  .fleet-banner h2 {
+    position: relative;
+    font-size: 48px;
+    margin: 0 0 15px;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .fleet-banner .btn-fleet {
+    position: relative;
+    background: #fff;
+    color: var(--primary);
+    padding: 10px 30px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 4px;
+  }
+
+  /* ---------- Welcome / About section ---------- */
+  .about-section {
+    padding: 50px 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .about-section h2 {
+    font-size: 22px;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+  }
+  .about-section p {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 20px;
+  }
+  .read-more-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 8px 22px;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+  .gallery .gallery-main img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .gallery .gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-top: 4px;
+  }
+  .gallery-thumbs img {
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+  }
+  .gallery-thumbs img.active { outline: 3px solid #fff; outline-offset: -3px; }
+  .dots {
+    text-align: center;
+    margin-top: 12px;
+  }
+  .dots span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 3px;
+  }
+  .dots span.active { background: var(--primary); }
+
+  /* ---------- Services / Contact / Map row ---------- */
+  .services-row {
+    background: var(--gray-bg);
+    padding: 40px 0;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .service-card {
+    background: #3a4256;
+    border-radius: 8px;
+    padding: 25px;
+    color: #fff;
+  }
+  .service-card h3 {
+    font-size: 16px;
+    margin: 0 0 18px;
+    color: #fff;
+  }
+  .service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .service-card ul li {
+    padding: 6px 0;
+    font-size: 14px;
+    position: relative;
+    padding-left: 22px;
+  }
+  .service-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #fff;
+    background: var(--primary);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 10px;
+  }
+  .contact-table {
+    width: 100%;
+    font-size: 14px;
+  }
+  .contact-table td {
+    padding: 6px 0;
+    vertical-align: top;
+  }
+  .contact-table td:first-child {
+    width: 90px;
+    color: #bbb;
+  }
+  .call-btn {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: block;
+  }
+  .map-card {
+    background: #ddd;
+    min-height: 240px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .map-card iframe { display: block; width: 100%; height: 240px; border: 0; }
+
+  /* ---------- Tips & commercial info row ---------- */
+  .info-row {
+    background: var(--darker);
+    padding: 40px 0;
+    color: #fff;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .info-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .info-item .icon {
+    background: #1f2940;
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+  }
+  .info-item h3 {
+    font-size: 16px;
+    margin: 0 0 12px;
+  }
+  .info-item p { font-size: 13px; color: #ccc; margin: 0 0 12px; }
+  .info-item a {
+    color: var(--primary-light);
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  /* ---------- Parts promo + testimonials ---------- */
+  .visualizer-row {
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .wheel-promo {
+    background: var(--primary-dark);
+    color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .wheel-promo img { width: 100%; height: auto; }
+  .testimonials h3 {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: var(--primary-dark);
+  }
+  .testimonials .rating-summary {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+  }
+  .testimonials .rating-summary .stars { font-size: 20px; }
+  .testimonial {
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    position: relative;
+  }
+  .testimonial .meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .g-icon {
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #4285f4;
+  }
+  .testimonial .name { font-weight: bold; }
+  .testimonial .date {
+    margin-left: auto;
+    color: #888;
+    font-size: 12px;
+  }
+
+  /* ---------- Locations served ---------- */
+  .locations-served {
+    background: #fff;
+    text-align: center;
+    padding: 18px 0;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--darker);
+    color: #ccc;
+    padding: 50px 0 0;
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 40px;
+  }
+  footer .logo img { height: 40px; margin-bottom: 14px; }
+  footer h4 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 0 16px;
+  }
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  footer ul li { padding: 5px 0; }
+  footer ul li a { color: var(--primary-light); }
+  footer .learn-more { color: var(--primary-light); text-decoration: underline; font-size: 13px; }
+  .newsletter input[type="email"] {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #444;
+    background: #fff;
+    color: #000;
+    margin-right: 6px;
+  }
+  .newsletter button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+  .footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+  }
+  .footer-bottom .powered { text-align: center; flex: 1; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .nav-links { gap: 14px; font-size: 12px; }
+    .promo-strip { grid-template-columns: 1fr; }
+    .about-grid, .services-grid, .info-grid, .visualizer-row, .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-cards { position: static; padding: 20px; flex-wrap: wrap; }
+    .hero-expert { display: none; }
+    .welcome-bar h1 { font-size: 18px; }
+    .fleet-banner h2 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top thin bar -->
+  <div class="topbar"></div>
+
+  <!-- Utility bar -->
+  <div class="utility-bar">
+    <a href="#about">About</a>
+  </div>
+
+  <!-- Welcome / address / reviews -->
+  <div class="welcome-bar container">
+    <div style="width:140px;"><!-- spacer to balance reviews on right --></div>
+    <div class="welcome-title">
+      <h1>WELCOME TO REFRIGERATED TRANSPORT SERVICE</h1>
+      <div class="address">1620 Strasburg Rd, Kitchener, ON N2R 1E9</div>
+    </div>
+    <div class="reviews">
+      <span class="rating">4.8</span>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div>Total 13 Reviews</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="main-nav">
+    <div class="logo">
+      <img src="assets/logo.png"
+           onerror="this.onerror=null;this.src='https://placehold.co/200x40/ffffff/143a73?text=RTS+LOGO';"
+           alt="Refrigerated Transport Service logo">
+      <div class="canadian-badge">PROUDLY<br>🇨🇦<br>CANADIAN</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#reefer">REEFER REPAIR</a></li>
+      <li><a href="#trailer">TRAILER SERVICE</a></li>
+      <li><a href="#mobile">MOBILE SERVICE</a></li>
+      <li><a href="#parts">PARTS</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    <a href="tel:5197485439" class="phone-btn">519-748-5439</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img class="hero-bg"
+         src="assets/hero.jpg"
+         onerror="this.onerror=null;this.src='https://placehold.co/1600x500/0a2447/ffffff?text=HERO+IMAGE+%E2%80%93+REFRIGERATED+TRAILER+ON+THE+ROAD';"
+         alt="Refrigerated trailer hero">
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="label">Need a<br>Reefer Repair?</div>
+        <a href="#" class="btn">Get Service</a>
+      </div>
+      <div class="hero-card primary">
+        <div class="label">Mobile<br>Service Available</div>
+        <a href="#" class="btn">Request Now</a>
+      </div>
+      <div class="hero-card">
+        <div class="label">Schedule an<br>Appointment</div>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+    <div class="hero-expert">
+      <img src="assets/owner.png"
+           onerror="this.onerror=null;this.src='https://placehold.co/280x380/2d3a55/ffffff?text=OWNER+PHOTO';"
+           alt="Owner Jeff Carson">
+      <div class="name">
+        <strong>Jeff Carson</strong><br>
+        <small>Owner – Reefer &amp; Trailer Specialist</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo strip -->
+  <section class="promo-strip">
+    <div class="promo-1">
+      <div>
+        <h2>Mobile Service</h2>
+        <span class="click-here">Click Here »</span>
+      </div>
+    </div>
+    <div class="promo-2">
+      <div>
+        <h2>Reefer Tips</h2>
+        <span class="click-here">Click Here »</span>
+      </div>
+    </div>
+    <div class="promo-3">
+      <div>
+        <div class="small">• FAMILY OWNED • TRUSTED REPAIRS</div>
+        <div class="cta">CLICK HERE TO LEARN ABOUT OUR PARTS &amp; ACCESSORIES</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet banner -->
+  <section class="fleet-banner">
+    <h2>FLEET SERVICES</h2>
+    <a href="#" class="btn-fleet">CLICK HERE</a>
+  </section>
+
+  <!-- About / welcome content -->
+  <section class="about-section container">
+    <div class="about-grid">
+      <div>
+        <h2>Welcome to Refrigerated Transport Service</h2>
+        <p>
+          RTS has been servicing the Kitchener-Waterloo region and surrounding areas as a trusted, family-owned
+          repair shop specializing in refrigerated trailer (reefer) units. Conveniently located on Strasburg Road,
+          our shop offers easy access for trucks and trailers of every size — with plenty of yard space to
+          maneuver large rigs and multiple bays to get your equipment in and out quickly.
+        </p>
+        <p>
+          We understand that downtime costs you money, which is why we offer both in-shop service and mobile
+          repair to keep your fleet on the road. From refrigeration unit diagnostics and repair, to trailer
+          brakes, lighting, and structural fixes, to genuine parts and accessories — our experienced team handles
+          it all. Whether you're an owner-operator or managing a multi-truck fleet, you can count on RTS for
+          honest work, fair pricing, and the kind of service that has earned us a loyal customer base for years…
+        </p>
+        <a href="#" class="read-more-btn">Read More</a>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-main">
+          <img src="assets/shop-exterior.jpg"
+               onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/666666?text=SHOP+EXTERIOR+PHOTO';"
+               alt="Shop exterior">
+        </div>
+        <div class="gallery-thumbs">
+          <img class="active"
+               src="assets/gallery-1.jpg"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x60/cccccc/666666?text=THUMB+1';"
+               alt="Gallery thumbnail 1">
+          <img src="assets/gallery-2.jpg"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x60/4a6a8a/ffffff?text=THUMB+2';"
+               alt="Gallery thumbnail 2">
+          <img src="assets/gallery-3.jpg"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x60/8a6a4a/ffffff?text=THUMB+3';"
+               alt="Gallery thumbnail 3">
+          <img src="assets/gallery-4.jpg"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x60/3a5a7a/ffffff?text=THUMB+4';"
+               alt="Gallery thumbnail 4">
+        </div>
+        <div class="dots">
+          <span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Contact / Map -->
+  <section class="services-row">
+    <div class="container">
+      <div class="services-grid">
+
+        <div class="service-card">
+          <h3>Services offered by RTS</h3>
+          <ul>
+            <li>Reefer Unit Repairs</li>
+            <li>Trailer Service &amp; Repair</li>
+            <li>Mobile Service Available</li>
+            <li>Parts &amp; Accessories</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <h3>Contact RTS Kitchener</h3>
+          <table class="contact-table">
+            <tr><td>Address</td><td>1620 Strasburg Rd, Kitchener, ON N2R 1E9</td></tr>
+            <tr><td>Telephone</td><td><a class="call-btn" href="tel:5197485439">📞 CALL US</a></td></tr>
+            <tr><td>Hours</td><td>M T W Th : 8:00 am - 4:30 pm<br>F : 8:00 am - 3:30 pm<br>Sa Su: Closed</td></tr>
+            <tr><td>Owner</td><td>Jeff Carson</td></tr>
+          </table>
+        </div>
+
+        <div class="service-card" style="padding:0;">
+          <div class="map-card">
+            <iframe
+              src="https://maps.google.com/maps?q=1620%20Strasburg%20Rd%2C%20Kitchener%2C%20ON%20N2R%201E9&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="RTS Kitchener location map">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips / commercial info -->
+  <section class="info-row">
+    <div class="container">
+      <div class="info-grid">
+
+        <div class="info-item">
+          <div class="icon">🧊</div>
+          <div>
+            <h3>Preventive Reefer Maintenance: Our Best Tips</h3>
+            <p>
+              A reefer breakdown on the road can mean spoiled freight and serious losses. Routine maintenance is
+              the cheapest insurance policy you can buy. From belt and hose inspections to defrost cycles,
+              refrigerant levels, and door seal checks — here are the maintenance habits that keep your unit
+              running cold and reliable through every season.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">🚚</div>
+          <div>
+            <h3>Mobile Service &amp; Fleet Support</h3>
+            <p>
+              Make RTS your first stop for all of your refrigerated transport needs. From in-shop reefer repairs
+              to on-site mobile service for your fleet, our team is ready to help you get your equipment back on
+              the road as quickly as possible — minimizing downtime and protecting your loads.
+            </p>
+            <a href="#">Click here to see a full list of RTS Fleet Services</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Parts promo + testimonials -->
+  <section class="container">
+    <div class="visualizer-row">
+      <div class="wheel-promo">
+        <img src="assets/parts-promo.jpg"
+             onerror="this.onerror=null;this.src='https://placehold.co/600x420/0a2447/ffffff?text=PARTS+%26+ACCESSORIES+PROMO';"
+             alt="Parts and accessories promo">
+      </div>
+      <div class="testimonials">
+        <h3>Testimonials</h3>
+        <div class="rating-summary">
+          <div class="stars">★★★★★</div>
+          <div><strong>4.8 Rating</strong> &nbsp;|&nbsp; 13 Reviews</div>
+        </div>
+
+        <div class="testimonial">
+          <div class="meta">
+            <span class="g-icon">G</span>
+            <span class="name">Customer Review</span>
+            <span class="date">Recent</span>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>Well-run shop. I've been bringing my trailers here and buying parts for years and have always been
+          satisfied with the integrity of their work.</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="meta">
+            <span class="g-icon">G</span>
+            <span class="name">Customer Review</span>
+            <span class="date">Recent</span>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>Friendly, helpful crew that really knows reefers and trailers. Family-owned business that takes the
+          time to work with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations served -->
+  <div class="locations-served">LOCATIONS SERVED ▾</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">
+            <img src="assets/logo-dark.png"
+                 onerror="this.onerror=null;this.src='https://placehold.co/200x40/0f172a/ffffff?text=RTS+LOGO';"
+                 alt="Refrigerated Transport Service">
+          </div>
+          <small style="color:#aaa;">Reliable reefer repair, on the road and in the shop.</small>
+          <p style="margin-top:18px;color:#aaa;font-size:13px;">
+            Family-owned and operated, Refrigerated Transport Service specializes in reefer unit repairs, trailer
+            service, and quality parts for the trucking industry. Serving Kitchener-Waterloo and surrounding
+            areas, you can rely on RTS for honest work, fair pricing, and the experience that keeps your fleet
+            moving.
+          </p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+
+        <div>
+          <h4>RTS</h4>
+          <ul>
+            <li><a href="#">Reefer Repair</a></li>
+            <li><a href="#">Trailer Service</a></li>
+            <li><a href="#">Mobile Service</a></li>
+            <li><a href="#">Parts &amp; Accessories</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get RTS news, service tips and updates.<br>Subscribe below.</h4>
+          <form class="newsletter" onsubmit="event.preventDefault();">
+            <label style="display:block;margin-bottom:8px;font-size:13px;">Email Address *</label>
+            <input type="email" placeholder="">
+            <button type="submit">Subscribe</button>
+          </form>
+          <p style="margin-top:24px;">Follow RTS</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Refrigerated Transport Service</span>
+        <span class="powered">1620 Strasburg Rd, Kitchener, ON</span>
+        <span><a href="#">Privacy</a> &nbsp; <a href="#">Sitemap</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
