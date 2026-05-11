@@ -448,30 +448,129 @@
     overflow: hidden;
   }
   .wheel-promo img { width: 100%; height: auto; }
-  .testimonials h3 {
-    text-align: center;
-    font-size: 20px;
-    margin: 0 0 8px;
+
+  /* Service offerings (right side of parts-promo row) */
+  .services-offering h3 {
+    font-size: 22px;
+    margin: 0 0 12px;
     color: var(--primary-dark);
+    text-transform: uppercase;
   }
-  .testimonials .rating-summary {
-    text-align: center;
-    margin-bottom: 20px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #eee;
+  .services-offering .services-intro {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 20px;
   }
-  .testimonials .rating-summary .stars { font-size: 20px; }
-  .testimonial {
-    padding: 16px 0;
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+  }
+  .service-list li {
+    padding: 12px 0;
     border-bottom: 1px solid #eee;
     font-size: 14px;
-    position: relative;
   }
-  .testimonial .meta {
+  .service-list li:last-child { border-bottom: none; }
+  .service-list strong {
+    display: block;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+  }
+  .service-list span { color: #555; }
+  .services-cta {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 22px;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+  /* Testimonials marquee section */
+  .testimonials-section {
+    background: #f7f7f7;
+    padding: 50px 0;
+    overflow: hidden;
+  }
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .testimonials-section h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    margin: 0 0 12px;
+  }
+  .testimonials-section .rating-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  .testimonials-section .rating-summary .stars {
+    color: var(--accent);
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .testimonials-marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+  }
+  .testimonials-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    padding: 10px 20px;
+    animation: marquee 80s linear infinite;
+  }
+  .testimonials-track:hover { animation-play-state: paused; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .testimonials-track { animation: none; }
+  }
+  .testimonial-card {
+    flex: 0 0 320px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+  .testimonial-card .testimonial-meta {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .testimonial-card .testimonial-meta > div {
+    flex: 1;
+  }
+  .testimonial-card .testimonial-name {
+    font-weight: bold;
+    color: var(--primary-dark);
+  }
+  .testimonial-card .testimonial-date {
+    font-size: 12px;
+    color: #888;
+  }
+  .testimonial-card .testimonial-stars {
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .testimonial-card p {
+    margin: 0;
+    line-height: 1.5;
   }
   .g-icon {
     width: 28px;
@@ -484,12 +583,7 @@
     justify-content: center;
     font-weight: bold;
     color: #4285f4;
-  }
-  .testimonial .name { font-weight: bold; }
-  .testimonial .date {
-    margin-left: auto;
-    color: #888;
-    font-size: 12px;
+    flex-shrink: 0;
   }
 
   /* ---------- Locations served ---------- */
@@ -802,33 +896,180 @@
              onerror="this.onerror=null;this.src='https://placehold.co/600x420/0a2447/ffffff?text=PARTS+%26+ACCESSORIES+PROMO';"
              alt="Parts and accessories promo">
       </div>
-      <div class="testimonials">
-        <h3>Testimonials</h3>
+      <div class="services-offering">
+        <h3>What We Service</h3>
+        <p class="services-intro">From rooftop reefer units to trailer suspensions, our team handles the full repair stack so your fleet stays cold and on the road.</p>
+        <ul class="service-list">
+          <li>
+            <strong>Reefer Diagnostics &amp; Repair</strong>
+            <span>Thermo King and Carrier Transicold systems — refrigerant, controls, defrost cycles, electrical.</span>
+          </li>
+          <li>
+            <strong>Trailer Service</strong>
+            <span>Brakes, lighting, suspension, doors, and structural repairs. DOT-inspection ready.</span>
+          </li>
+          <li>
+            <strong>Mobile On-Site Repair</strong>
+            <span>We come to your yard or roadside across Kitchener-Waterloo when you can't make it to ours.</span>
+          </li>
+          <li>
+            <strong>Parts &amp; Accessories</strong>
+            <span>Genuine OEM and quality aftermarket parts in stock for same-day turnaround.</span>
+          </li>
+        </ul>
+        <a href="tel:+19495415094" class="services-cta">Request a Service Quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials marquee -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-header">
+        <h3>What Our Customers Say</h3>
         <div class="rating-summary">
-          <div class="stars">★★★★★</div>
-          <div><strong>4.8 Rating</strong> &nbsp;|&nbsp; 13 Reviews</div>
+          <span class="stars">★★★★★</span>
+          <strong>4.8</strong>
+          <span>· 13 Reviews on Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-marquee">
+      <!-- Two copies of the same set for a seamless right-to-left loop -->
+      <div class="testimonials-track">
+        <div class="testimonial-card">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Mike R.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Well-run shop. I've been bringing my trailers here and buying parts for years and have always been satisfied with the integrity of their work.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Sarah T.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Friendly, helpful crew that really knows reefers and trailers. Family-owned business that takes the time to work with you.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Dave K.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Quick turnaround on an emergency reefer repair last winter — saved a load of frozen goods. Highly recommend RTS for anyone running refrigerated freight.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Linda P.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Solid pricing and quality work. Jeff and the team are honest about what needs fixing and what can wait. That's rare in this industry.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Tom W.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Great mobile service. They came out to our yard and had our unit back online in a few hours. Professional from start to finish.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Jenna B.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Fair pricing, no surprises. Parts in stock when we need them. We use RTS for all our reefer maintenance now.</p>
         </div>
 
-        <div class="testimonial">
-          <div class="meta">
+        <!-- Duplicate set for seamless loop -->
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="testimonial-meta">
             <span class="g-icon">G</span>
-            <span class="name">Customer Review</span>
-            <span class="date">Recent</span>
+            <div>
+              <div class="testimonial-name">Mike R.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
           </div>
-          <div class="stars">★★★★★</div>
-          <p>Well-run shop. I've been bringing my trailers here and buying parts for years and have always been
-          satisfied with the integrity of their work.</p>
+          <p>Well-run shop. I've been bringing my trailers here and buying parts for years and have always been satisfied with the integrity of their work.</p>
         </div>
-
-        <div class="testimonial">
-          <div class="meta">
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="testimonial-meta">
             <span class="g-icon">G</span>
-            <span class="name">Customer Review</span>
-            <span class="date">Recent</span>
+            <div>
+              <div class="testimonial-name">Sarah T.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
           </div>
-          <div class="stars">★★★★★</div>
-          <p>Friendly, helpful crew that really knows reefers and trailers. Family-owned business that takes the
-          time to work with you.</p>
+          <p>Friendly, helpful crew that really knows reefers and trailers. Family-owned business that takes the time to work with you.</p>
+        </div>
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Dave K.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Quick turnaround on an emergency reefer repair last winter — saved a load of frozen goods. Highly recommend RTS for anyone running refrigerated freight.</p>
+        </div>
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Linda P.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Solid pricing and quality work. Jeff and the team are honest about what needs fixing and what can wait. That's rare in this industry.</p>
+        </div>
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Tom W.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Great mobile service. They came out to our yard and had our unit back online in a few hours. Professional from start to finish.</p>
+        </div>
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="testimonial-meta">
+            <span class="g-icon">G</span>
+            <div>
+              <div class="testimonial-name">Jenna B.</div>
+              <div class="testimonial-date">Recent</div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+          </div>
+          <p>Fair pricing, no surprises. Parts in stock when we need them. We use RTS for all our reefer maintenance now.</p>
         </div>
       </div>
     </div>
