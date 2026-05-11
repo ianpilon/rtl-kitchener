@@ -429,8 +429,14 @@ a { color: inherit; text-decoration: none; }
   color: #fff;
   border-radius: 4px;
   overflow: hidden;
+  height: 100%;
 }
-.wheel-promo img { width: 100%; height: auto; }
+.wheel-promo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* Service offerings (right side of parts-promo row) */
 .services-offering h3 {
