@@ -136,14 +136,17 @@
   .hero-expert img {
     height: 280px;
     width: auto;
+    display: block;
   }
   .hero-expert .name {
     background: rgba(0,0,0,0.5);
     padding: 6px 14px;
     font-size: 13px;
-    margin-top: -40px;
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
   }
 
   /* ---------- Promo strip (3 boxes) ---------- */
