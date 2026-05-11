@@ -317,12 +317,29 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 .map-card {
+  position: relative;
   background: #ddd;
   min-height: 240px;
   border-radius: 8px;
   overflow: hidden;
 }
 .map-card iframe { display: block; width: 100%; height: 240px; border: 0; }
+.map-directions {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+.map-directions:hover { background: var(--primary-dark); }
 
 /* ---------- Tips & commercial info row ---------- */
 .info-row {
