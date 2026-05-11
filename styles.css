@@ -627,12 +627,34 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Locations served ---------- */
 .locations-served {
   background: #fff;
-  text-align: center;
-  padding: 18px 0;
+  padding: 50px 0;
   border-top: 1px solid #eee;
+}
+.locations-served h2 {
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 30px;
+}
+.locations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.locations-group h3 {
+  color: var(--primary-dark);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px;
+}
+.locations-group p {
   font-size: 14px;
-  font-weight: bold;
   color: #555;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ---------- Footer ---------- */
@@ -690,7 +712,7 @@ footer .learn-more { color: var(--primary-light); text-decoration: underline; fo
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .nav-links { gap: 14px; font-size: 12px; }
-  .about-grid, .services-grid, .info-grid, .visualizer-row, .footer-grid, .benefits-grid, .contact-page-grid {
+  .about-grid, .services-grid, .info-grid, .visualizer-row, .footer-grid, .benefits-grid, .contact-page-grid, .locations-grid {
     grid-template-columns: 1fr;
   }
   .hero-cards { position: static; padding: 20px; flex-wrap: wrap; }
