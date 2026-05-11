@@ -215,11 +215,12 @@ a { color: inherit; text-decoration: none; }
   padding: 40px 0;
 }
 .services-row.contact-page {
+  background: #fff;
   min-height: calc(100vh - 220px);
   padding: 60px 0 80px;
 }
 .contact-page-heading {
-  color: #fff;
+  color: var(--primary-dark);
   font-size: 26px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -230,6 +231,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  align-items: start;
 }
 .services-grid {
   display: grid;
