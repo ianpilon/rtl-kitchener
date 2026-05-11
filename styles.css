@@ -233,6 +233,26 @@ a { color: inherit; text-decoration: none; }
   gap: 24px;
   align-items: start;
 }
+.contact-page .service-card {
+  background: #fff;
+  color: var(--primary-dark);
+  border: 1px solid #e5e7eb;
+}
+.contact-page .service-card h3 {
+  color: var(--primary-dark);
+}
+.contact-page .contact-table td:first-child {
+  color: #6b7280;
+}
+.contact-page .call-btn {
+  background: var(--cta);
+  color: #000;
+  display: inline-block;
+  width: auto;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+}
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
