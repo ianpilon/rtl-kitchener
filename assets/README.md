@@ -15,6 +15,15 @@ to a `placehold.co` placeholder automatically.
 | `assets/gallery-3.jpg`        | Gallery thumbnail 3            | 150 × 60         |                                    |
 | `assets/gallery-4.jpg`        | Gallery thumbnail 4            | 150 × 60         |                                    |
 | `assets/parts-promo.jpg`      | Parts & accessories promo card | 600 × 420        | Tall card on the testimonials row  |
+| `assets/parts/belts.jpg`      | Parts page: Drive Belts        | 500 × 300        | 5:3 ratio, object-fit cover         |
+| `assets/parts/door-seals.jpg` | Parts page: Door Seals         | 500 × 300        | 5:3 ratio                          |
+| `assets/parts/filters.jpg`    | Parts page: Filters            | 500 × 300        | 5:3 ratio                          |
+| `assets/parts/refrigerant.jpg`| Parts page: Refrigerant        | 500 × 300        | 5:3 ratio                          |
+| `assets/parts/sensors.jpg`    | Parts page: Sensors            | 500 × 300        | 5:3 ratio                          |
+| `assets/parts/brakes.jpg`     | Parts page: Brakes             | 500 × 300        | 5:3 ratio                          |
 
 Sizes are targets — anything in roughly the same aspect ratio will look fine
 because each `<img>` is constrained by CSS.
+
+When a parts image file is missing, the gray block stays as a placeholder
+(`onerror` hides the broken `<img>` so only the slot's gray bg shows).
