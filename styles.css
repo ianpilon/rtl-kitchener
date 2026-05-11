@@ -224,6 +224,12 @@ a { color: inherit; text-decoration: none; }
   height: 220px;
   object-fit: cover;
 }
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
 .gallery .gallery-thumbs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
