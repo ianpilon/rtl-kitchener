@@ -1,0 +1,85 @@
+# robots.txt for Refrigerated Transport Service (RTS) — Kitchener
+# Explicit allow rules for AI crawlers so they can index the site for AI search.
+# /geo-demo/ is disallowed because those pages contain template content marked
+# "DO NOT PUBLISH" and should not appear in search results.
+
+# Default: allow all
+User-agent: *
+Allow: /
+Disallow: /geo-demo/
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+Disallow: /geo-demo/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /geo-demo/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /geo-demo/
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+Disallow: /geo-demo/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /geo-demo/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /geo-demo/
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /geo-demo/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /geo-demo/
+
+# Google (AI training opt-in is a separate user-agent from Googlebot)
+User-agent: Google-Extended
+Allow: /
+Disallow: /geo-demo/
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /geo-demo/
+
+# Common Crawl (used to seed many model training sets)
+User-agent: CCBot
+Allow: /
+Disallow: /geo-demo/
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /geo-demo/
+
+User-agent: FacebookBot
+Allow: /
+Disallow: /geo-demo/
+
+# Amazon (Alexa AI)
+User-agent: Amazonbot
+Allow: /
+Disallow: /geo-demo/
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+Disallow: /geo-demo/
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+Disallow: /geo-demo/
+
+Sitemap: https://ianpilon.github.io/rts-kitchener/sitemap.xml
