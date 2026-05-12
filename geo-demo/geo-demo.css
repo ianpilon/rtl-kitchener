@@ -1,0 +1,141 @@
+/* ---------- GEO Demo Page Layout ---------- */
+.geo-demo-page {
+  background: #fff;
+  padding: 50px 0 80px;
+  min-height: calc(100vh - 220px);
+}
+.geo-demo-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #333;
+}
+.geo-demo-content h1 {
+  color: var(--primary-dark);
+  font-size: 28px;
+  margin: 0 0 24px;
+  letter-spacing: 0.3px;
+}
+.geo-demo-content h2 {
+  color: var(--primary-dark);
+  font-size: 20px;
+  margin: 32px 0 12px;
+}
+.geo-demo-content p {
+  margin: 12px 0;
+}
+.geo-demo-content ul,
+.geo-demo-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+.geo-demo-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+.geo-demo-content th,
+.geo-demo-content td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.geo-demo-content th {
+  background: #f7f7f7;
+  color: var(--primary-dark);
+  font-weight: bold;
+}
+.geo-demo-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ---------- Yellow "do not publish" banner spacing ---------- */
+.geo-template-banner {
+  margin: 0 0 28px;
+}
+
+/* ---------- Template-marked paragraphs ----------
+   Every paragraph the generator preceded with <!-- TEMPLATE: ... -->
+   gets this treatment so the client can SEE which copy is a placeholder
+   versus real content extracted from their braindump. */
+.geo-template-paragraph {
+  background: #fef9c3;
+  border-left: 4px solid #f59e0b;
+  padding: 14px 18px;
+  margin: 18px 0;
+  border-radius: 4px;
+  position: relative;
+}
+.geo-template-paragraph::before {
+  content: "✏️ TEMPLATE SCENARIO — replace with a real customer story before publishing";
+  display: block;
+  font-size: 11px;
+  font-weight: bold;
+  color: #92400e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* ---------- Cross-page nav within the demo ---------- */
+.geo-demo-pagenav {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 14px 18px;
+  margin: 0 0 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #0c4a6e;
+}
+.geo-demo-pagenav strong {
+  display: block;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.geo-demo-pagenav a {
+  color: var(--primary);
+  text-decoration: underline;
+  margin-right: 14px;
+  white-space: nowrap;
+  line-height: 1.9;
+}
+.geo-demo-pagenav a[aria-current="page"] {
+  font-weight: bold;
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* ---------- Demo index landing ---------- */
+.geo-demo-index ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+.geo-demo-index li {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 0 0 14px;
+}
+.geo-demo-index li h3 {
+  color: var(--primary-dark);
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+.geo-demo-index li h3 a {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+.geo-demo-index li h3 a:hover { text-decoration: underline; }
+.geo-demo-index li p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
