@@ -840,8 +840,9 @@ footer .learn-more { color: var(--primary-light); text-decoration: underline; fo
   .hero-cards .hero-card {
     min-width: 0;
     padding: 14px 20px;
+    background: rgba(0, 0, 0, 0.5);
   }
-  .hero-cards .hero-card .label { font-size: 16px; margin-bottom: 8px; }
+  .hero-cards .hero-card .label { font-size: 16px; margin-bottom: 8px; color: #fff; }
   .hero-cards .hero-card .btn { padding: 7px 20px; font-size: 16px; }
   .hero-expert { display: none; }
 
