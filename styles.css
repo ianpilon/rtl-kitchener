@@ -120,6 +120,9 @@ a { color: inherit; text-decoration: none; }
   gap: 18px;
 }
 .hero-phone { display: none; }
+
+/* Mobile-only Jeff portrait above the footer (hidden on desktop) */
+.mobile-jeff { display: none; }
 .hero-card {
   background: rgba(245, 245, 245, 0.5);
   padding: 21px 27px;
@@ -845,6 +848,44 @@ footer .learn-more { color: var(--primary-light); text-decoration: underline; fo
   .hero-cards .hero-card .label { font-size: 16px; margin-bottom: 8px; color: #fff; }
   .hero-cards .hero-card .btn { padding: 7px 20px; font-size: 16px; }
   .hero-expert { display: none; }
+
+  /* Show Jeff portrait above the footer on mobile */
+  .mobile-jeff {
+    display: block;
+    text-align: center;
+    padding-top: 40px;
+  }
+  .mobile-jeff-inner {
+    position: relative;
+    display: inline-block;
+  }
+  .mobile-jeff img {
+    height: 360px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .mobile-jeff .name {
+    background: rgba(0,0,0,0.5);
+    padding: 10px 22px;
+    font-size: 22px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .mobile-jeff .name .experience {
+    display: block;
+    white-space: normal;
+    font-size: 14px;
+    max-width: 300px;
+    margin: 6px auto 0;
+    line-height: 1.3;
+    font-style: italic;
+    color: var(--accent);
+  }
 
   /* Hamburger nav */
   .hamburger { display: flex; }
