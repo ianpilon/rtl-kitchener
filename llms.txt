@@ -4,19 +4,19 @@
 
 ## Services
 
-- [Trailer Service & Repair](https://ianpilon.github.io/rts-kitchener/trailer-service.html): Reefer diagnostics and repair (Thermo King, Carrier Transicold), trailer brakes, lighting, suspension, doors, structural repairs, and mobile on-site service across the KW region.
-- [Parts & Accessories](https://ianpilon.github.io/rts-kitchener/parts.html): OEM and aftermarket reefer parts in stock — drive belts, door seals, filters, refrigerant, sensors, brake and suspension components.
-- [Refrigerated Trailer Leasing](https://ianpilon.github.io/rts-kitchener/leasing.html): 53-foot reefer trailers for rent. Full specifications: 102⅜" wide, 13'6" high, 65,000 lb GVWR, 55,000 lb payload capacity.
+- [Trailer Service & Repair](https://ianpilon.github.io/rtl-kitchener/trailer-service.html): Reefer diagnostics and repair (Thermo King, Carrier Transicold), trailer brakes, lighting, suspension, doors, structural repairs, and mobile on-site service across the KW region.
+- [Parts & Accessories](https://ianpilon.github.io/rtl-kitchener/parts.html): OEM and aftermarket reefer parts in stock — drive belts, door seals, filters, refrigerant, sensors, brake and suspension components.
+- [Refrigerated Trailer Leasing](https://ianpilon.github.io/rtl-kitchener/leasing.html): 53-foot reefer trailers for rent. Full specifications: 102⅜" wide, 13'6" high, 65,000 lb GVWR, 55,000 lb payload capacity.
 
 ## About
 
-- [About RTS](https://ianpilon.github.io/rts-kitchener/about.html): Family-owned and operated. Multiple service bays, on-site parts inventory, and mobile service capability.
-- [Contact](https://ianpilon.github.io/rts-kitchener/contact.html): Address, hours, phone, embedded map with directions.
+- [About RTS](https://ianpilon.github.io/rtl-kitchener/about.html): Family-owned and operated. Multiple service bays, on-site parts inventory, and mobile service capability.
+- [Contact](https://ianpilon.github.io/rtl-kitchener/contact.html): Address, hours, phone, embedded map with directions.
 
 ## Brand facts (machine-readable)
 
-- [brand-facts.json](https://ianpilon.github.io/rts-kitchener/.well-known/brand-facts.json): Structured brand facts for AI agents.
-- [sitemap.xml](https://ianpilon.github.io/rts-kitchener/sitemap.xml): Canonical page list.
+- [brand-facts.json](https://ianpilon.github.io/rtl-kitchener/.well-known/brand-facts.json): Structured brand facts for AI agents.
+- [sitemap.xml](https://ianpilon.github.io/rtl-kitchener/sitemap.xml): Canonical page list.
 
 ## Service area
 

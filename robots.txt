@@ -82,4 +82,4 @@ User-agent: Bytespider
 Allow: /
 Disallow: /geo-demo/
 
-Sitemap: https://ianpilon.github.io/rts-kitchener/sitemap.xml
+Sitemap: https://ianpilon.github.io/rtl-kitchener/sitemap.xml

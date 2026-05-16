@@ -7,7 +7,7 @@ Single-file HTML with inline CSS, no build step. Open `index.html` in a browser.
 ## Layout
 
 ```
-rts-kitchener/
+rtl-kitchener/
 ├── index.html        # the whole site
 └── assets/           # drop real images here (see assets/README.md)
 ```
